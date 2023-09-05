@@ -12,7 +12,7 @@
   "categories": [],
   "icons": [
     {
-        "src": "https://www.pwabuilder.com/assets/icons/icon_512.png",
+        "src": "AppImages/android/android-launchericon-512-512.png",
         "sizes": "512x512",
         "type": "image/png",
         "purpose": "any"
@@ -25,7 +25,6 @@
       "type": "image/png"
     }
   ],
-   "shortcuts": [],
   "id": "12345678",
   "lang": "en"
 }
