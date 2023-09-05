@@ -1,0 +1,187 @@
+/* Reset and Global styles */
+body, html {
+    
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    overflow-y: hidden;
+    max-width: 480px;  /* not ok yet! */
+    margin: 0;
+}
+
+#video {
+    visibility: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.allcontent {
+    max-width: 480px; /* this is the maximum width you want */
+    margin: 0 auto;   /* this centers the container in the middle */
+    width: 100%;      /* this ensures that it takes the full width up to the max-width */
+}
+
+img {
+    margin: 0;
+    padding: 0;
+    display: block; /* Ensures no extra space */
+}
+
+.container {
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    /* height: 100%; */
+    width: 100%;
+    
+    margin: 0 auto;
+    height: 100vh; /* 100% of the viewport height */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: space-between; /* Maximize space between children */
+}
+
+.controls {
+    display: flex;
+    flex-direction: column; /* Arrange the control rows in a column */
+    justify-content: center;
+    align-items: center; /* Centering items horizontally */
+    width: 100%;
+    margin: 20px 0; /* Add some vertical spacing between rows */
+    margin-top: 2%;
+    align-self: flex-start; /* Align to the start/top of the flex container */
+
+    
+}
+
+.control-btn {
+    display: flex; /* Layout images horizontally */
+    align-items: center; /* Align the images vertically in the center */
+    justify-content: space-between; /* Evenly space between images */
+    position: relative; /* For positioning of the slide image */
+    margin: 10px;
+    padding: 10px;
+    margin-top: 5%;
+    cursor: pointer;
+    width: 150px; /* Define a fixed width to ensure space between images */
+    border: 2px solid #0000000c;     /* Black border of 2px width */
+    border-radius: 20%;        /* Optional: Rounded corners */
+    margin: 10px 0;             /* Adjust margin for separation */
+    padding: 15px;
+    background-color: #f0f0f0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);  /* Horizontal offset, vertical offset, blur radius, color */
+    z-index: 10;
+    
+
+    /* Removes tap highlight color in Webkit browsers */
+    -webkit-tap-highlight-color: transparent;
+}
+
+.control-btn img {
+    width: 30px;
+    height: 30px;
+    /* transition: all 0.3s; Animate any changes */
+    z-index: 1; /* Make sure images stay on top of the slider */
+}
+
+.control-btn img:nth-child(1),
+.control-btn img:nth-child(3) {
+    flex-shrink: 0; /* Prevents these images from shrinking */
+}
+
+.control-btn img:nth-child(2) {
+    position: absolute;
+    left: 20%; /* Starts from the left */
+    width: 60px;  /* Increased from 50px */
+    height: 60px; /* Increased from 50px */
+}
+
+.control-btn.active img:nth-child(2) {
+    left: 50%; /* Moves the slide image by half its width */
+    transform: translateX(-20%); /* Corrects the position to be centered between the other two images */
+}
+
+@keyframes oscillate {
+    0% { opacity: 0.7; }
+    50% { opacity: 0.5; }
+    100% { opacity: 0.7; }
+}
+
+.inactive {
+    animation: oscillate 2s infinite; /* 1 second oscillation loop */
+    pointer-events: none;  /* akes it non-clickable */
+}
+
+
+.bunny-container {
+    position: absolute;
+    width: 100%;
+    max-height: 300px;
+    bottom: 0;
+    left: 0;
+}
+
+
+.bunny {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 0;
+    
+}
+
+/* Borders, shadows, and other additional aesthetic styles can be added or adjusted as per preference */
+/* New styles for the added images */
+.header-images {
+    display: flex;
+    flex-direction: column; /* Stacks children vertically */
+    justify-content: center; /* Horizontally centers children */
+    align-items: center; /* Vertically centers children */
+    width: 100%; /* Takes full width of parent container */
+    position: relative; /* Establishes a stacking context */
+}
+
+.header-images img.top-line {
+    width: 100%;
+    z-index: 2; /* Sets a higher stacking order */
+    position: relative; /* Required for z-index to work */
+    margin-top: 10%;
+}
+
+.header-images img.bottom-line {
+    width: 50%;
+    margin-top: -14%;
+    
+}
+
+.red-circle {
+    width: 50px;  /* Increased the width and height to give more room for the gradient effect */
+    height: 50px;
+    background: radial-gradient(circle at center, rgba(234, 255, 0, 0.9), rgba(234, 255, 0, 0)); /* Radial gradient for fluent transition */
+    border-radius: 50%;
+    opacity: 0.1; /* Set initial opacity */
+    position: absolute;
+    top: 75%; 
+    left: 77%; 
+    transform: translate(-50%, -50%);
+    z-index: 10;
+
+    box-shadow: 0 0 5px 5px rgba(234, 255, 0, 0.7); /* Increased blur and added spread for more diffusion */
+}
+
+
+  .active-flash {
+    animation: flash 0.02s alternate;
+    opacity: 1; /* Fully visible */
+  }
+  
+  @keyframes flash {
+    from {
+      opacity: 0.0;
+    }
+    to {
+      opacity: 0.8;
+    }
+  }

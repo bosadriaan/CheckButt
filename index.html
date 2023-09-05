@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="manifest" href="manifest.json">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/assets/icons/apple-touch-icon.png"
+    />
+    <title>ButtCheck Checker</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="face-api.min.js"></script>
+    <script defer src="geiger.js"></script>
+    <script>
+      if (typeof navigator.serviceWorker !== 'undefined') {
+        navigator.serviceWorker.register('sw.js')
+      }
+    </script>
+    
+ </head>
+
+  <body>
+    <div class="allcontent">
+      <video id="video" autoplay muted width="2" height="2"></video>
+      <audio loop id="silentAudio">
+        <source src="assets/100hz.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+      <div class="header-images">
+        <img src="assets/buttcheckc.png" alt="Top Line" class="top-line" />
+        <!-- <img src="assets/bottomline.png" alt="Bottom Line" class="bottom-line" /> -->
+      </div>
+      <div class="container">
+        <div class="controls">
+          <div class="control-btn power-btn">
+            <img src="assets/stop.png" alt="Play" />
+            <img src="assets/slide.png" alt="Slider" />
+            <img src="assets/play.png" alt="Pause" />
+          </div>
+          <div class="control-btn mute-btn">
+            <img src="assets/soundon.png" alt="Muted" />
+            <img src="assets/slide.png" alt="Slider" />
+            <img src="assets/soundoff.png" alt="Sound On" />
+          </div>
+        </div>
+        <div id="redCircle" class="red-circle"></div>
+
+        <div class="bunny-container">
+          <img src="assets/bunnyphone.jpg" alt="Bunny" class="bunny" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
