@@ -162,7 +162,7 @@ function playTick(beepCount) {
   for (let i = 0; i < beepCount; i++) {
     setTimeout(() => {
       if (supportsVibration) {
-        navigator.vibrate([25]);
+        navigator.vibrate([50]);
       }
 
       if (isMuted) {

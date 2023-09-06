@@ -10,6 +10,13 @@ body, html {
     margin: 0;
 }
 
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #ffffff; /* Set the same colors as light mode */
+        color: #000000;
+    }
+}
+
 #video {
     visibility: hidden;
     position: absolute;
